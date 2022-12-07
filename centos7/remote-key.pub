@@ -1,3 +1,5 @@
+#### I removed the ssh keys as i do not want to keep ssh keys available in public repo  ###
+
 In your case this file should have information of user remote_user public key which was generated before running the docker compose build for the image remote-host.
 More information check the Dockerfile under centos7 folder.
 
