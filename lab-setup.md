@@ -49,6 +49,7 @@ jenkins@ac06a64bdf03:/$ cd /var/jenkins_home/ansible/
 jenkins@ac06a64bdf03:~/ansible$ 
 
 jenkins@ac06a64bdf03:~/ansible$ cat hosts 
+
 [all:vars]
 
 ansible_connection = ssh
@@ -57,27 +58,39 @@ ansible_connection = ssh
 
 test1 ansible_host=remote_host ansible_user=remote_user ansible_private_key_file=/var/jenkins_home/ansible/remote-key
 
+
 [PROD]
 
 prod1 ansible_host=server1 ansible_user=remote_user ansible_private_key_file=/var/jenkins_home/ansible/remote-key
+
 prod2 ansible_host=server2 ansible_user=remote_user ansible_private_key_file=/var/jenkins_home/ansible/remote-key
+
 prod3 ansible_host=server3 ansible_user=remote_user ansible_private_key_file=/var/jenkins_home/ansible/remote-key
+
 
 [DEV]
 
 dev1 ansible_host=server4 ansible_user=remote_user ansible_private_key_file=/var/jenkins_home/ansible/remote-key
+
 dev2 ansible_host=server5 ansible_user=remote_user ansible_private_key_file=/var/jenkins_home/ansible/remote-key
+
 dev3 ansible_host=server6 ansible_user=remote_user ansible_private_key_file=/var/jenkins_home/ansible/remote-key
+
 
 [QA]
 
 qa1 ansible_host=server7 ansible_user=remote_user ansible_private_key_file=/var/jenkins_home/ansible/remote-key
+
 qa2 ansible_host=server8 ansible_user=remote_user ansible_private_key_file=/var/jenkins_home/ansible/remote-key
+
 qa3 ansible_host=server9 ansible_user=remote_user ansible_private_key_file=/var/jenkins_home/ansible/remote-key
+
 qa4 ansible_host=server10 ansible_user=remote_user ansible_private_key_file=/var/jenkins_home/ansible/remote-key
+
 jenkins@ac06a64bdf03:~/ansible$ 
 jenkins@ac06a64bdf03:~/ansible$ 
 jenkins@ac06a64bdf03:~/ansible$ ssh -i remote-key remote_user@server1
+
 Last login: Mon Dec 12 08:14:26 2022 from jenkins.devops_net
 [remote_user@aa03b7fff847 ~]$ 
 [remote_user@aa03b7fff847 ~]$ exit
@@ -86,6 +99,7 @@ Connection to server1 closed.
 jenkins@ac06a64bdf03:~/ansible$ 
 jenkins@ac06a64bdf03:~/ansible$ 
 jenkins@ac06a64bdf03:~/ansible$ ssh -i remote-key remote_user@server2
+
 Last login: Mon Dec 12 08:14:26 2022 from jenkins.devops_net
 [remote_user@0603aabe6e61 ~]$ 
 [remote_user@0603aabe6e61 ~]$ 
@@ -95,6 +109,7 @@ logout
 Connection to server2 closed.
 jenkins@ac06a64bdf03:~/ansible$ 
 jenkins@ac06a64bdf03:~/ansible$ ssh -i remote-key remote_user@server3
+
 Last login: Mon Dec 12 08:14:26 2022 from jenkins.devops_net
 [remote_user@b05dbe97ce05 ~]$ 
 [remote_user@b05dbe97ce05 ~]$ 
@@ -105,6 +120,7 @@ jenkins@ac06a64bdf03:~/ansible$
 
 
 jenkins@ac06a64bdf03:~/ansible/playbooks$ ansible -i ../hosts -m ping PROD
+
 prod2 | SUCCESS => {
     "ansible_facts": {
         "discovered_interpreter_python": "/usr/bin/python"
@@ -138,6 +154,7 @@ test1 | SUCCESS => {
 }
 jenkins@ac06a64bdf03:~/ansible/playbooks$ 
 jenkins@ac06a64bdf03:~/ansible/playbooks$ ansible -i ../hosts -m ping DEV
+
 dev2 | SUCCESS => {
     "ansible_facts": {
         "discovered_interpreter_python": "/usr/bin/python"
@@ -161,6 +178,7 @@ dev1 | SUCCESS => {
 }
 jenkins@ac06a64bdf03:~/ansible/playbooks$ 
 jenkins@ac06a64bdf03:~/ansible/playbooks$ ansible -i ../hosts -m ping QA
+
 qa1 | SUCCESS => {
     "ansible_facts": {
         "discovered_interpreter_python": "/usr/bin/python"
@@ -194,6 +212,7 @@ jenkins@ac06a64bdf03:~/ansible/playbooks$
 
 
 jenkins@ac06a64bdf03:~/ansible/playbooks$ ansible-playbook -i ../hosts command_run_shell.yml 
+
 
 PLAY [all] ***************************************************************************************************************************************************
 
