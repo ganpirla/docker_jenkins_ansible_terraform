@@ -92,7 +92,9 @@ jenkins@ac06a64bdf03:~/ansible$
 jenkins@ac06a64bdf03:~/ansible$ ssh -i remote-key remote_user@server1
 
 Last login: Mon Dec 12 08:14:26 2022 from jenkins.devops_net
+
 [remote_user@aa03b7fff847 ~]$ 
+
 [remote_user@aa03b7fff847 ~]$ exit
 logout
 Connection to server1 closed.
@@ -101,9 +103,13 @@ jenkins@ac06a64bdf03:~/ansible$
 jenkins@ac06a64bdf03:~/ansible$ ssh -i remote-key remote_user@server2
 
 Last login: Mon Dec 12 08:14:26 2022 from jenkins.devops_net
+
 [remote_user@0603aabe6e61 ~]$ 
+
 [remote_user@0603aabe6e61 ~]$ 
+
 [remote_user@0603aabe6e61 ~]$ 
+
 [remote_user@0603aabe6e61 ~]$ exit
 logout
 Connection to server2 closed.
@@ -111,8 +117,11 @@ jenkins@ac06a64bdf03:~/ansible$
 jenkins@ac06a64bdf03:~/ansible$ ssh -i remote-key remote_user@server3
 
 Last login: Mon Dec 12 08:14:26 2022 from jenkins.devops_net
+
 [remote_user@b05dbe97ce05 ~]$ 
+
 [remote_user@b05dbe97ce05 ~]$ 
+
 [remote_user@b05dbe97ce05 ~]$ exit
 logout
 Connection to server3 closed.
