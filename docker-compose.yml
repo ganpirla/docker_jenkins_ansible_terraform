@@ -18,5 +18,75 @@ services:
       context: centos7
     networks:
       - net
+  server_1:
+    container_name: server1
+    image: server1
+    build:
+      context: server1
+    networks:
+      - net  
+  server_2:
+    container_name: server2
+    image: server2
+    build:
+      context: server2
+    networks:
+      - net   
+  server_3:
+    container_name: server3
+    image: server3
+    build:
+      context: server3
+    networks:
+      - net     
+  server_4:
+    container_name: server4
+    image: server4
+    build:
+      context: server4
+    networks:
+      - net  
+  server_5:
+    container_name: server5
+    image: server5
+    build:
+      context: server5
+    networks:
+      - net
+  server_6:
+    container_name: server6
+    image: server6
+    build:
+      context: server6
+    networks:
+      - net    
+  server_7:
+    container_name: server7
+    image: server7
+    build:
+      context: server7
+    networks:
+      - net    
+  server_8:
+    container_name: server8
+    image: server8
+    build:
+      context: server8
+    networks:
+      - net    
+  server_9:
+    container_name: server9
+    image: server9
+    build:
+      context: server9
+    networks:
+      - net    
+  server_10:
+    container_name: server10
+    image: server10
+    build:
+      context: server10
+    networks:
+      - net                                         
 networks:
   net:

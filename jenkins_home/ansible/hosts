@@ -1,0 +1,26 @@
+[all:vars]
+
+ansible_connection = ssh
+
+[TEST]
+
+test1 ansible_host=remote_host ansible_user=remote_user ansible_private_key_file=/var/jenkins_home/ansible/remote-key
+
+[PROD]
+
+prod1 ansible_host=server1 ansible_user=remote_user ansible_private_key_file=/var/jenkins_home/ansible/remote-key
+prod2 ansible_host=server2 ansible_user=remote_user ansible_private_key_file=/var/jenkins_home/ansible/remote-key
+prod3 ansible_host=server3 ansible_user=remote_user ansible_private_key_file=/var/jenkins_home/ansible/remote-key
+
+[DEV]
+
+dev1 ansible_host=server4 ansible_user=remote_user ansible_private_key_file=/var/jenkins_home/ansible/remote-key
+dev2 ansible_host=server5 ansible_user=remote_user ansible_private_key_file=/var/jenkins_home/ansible/remote-key
+dev3 ansible_host=server6 ansible_user=remote_user ansible_private_key_file=/var/jenkins_home/ansible/remote-key
+
+[QA]
+
+qa1 ansible_host=server7 ansible_user=remote_user ansible_private_key_file=/var/jenkins_home/ansible/remote-key
+qa2 ansible_host=server8 ansible_user=remote_user ansible_private_key_file=/var/jenkins_home/ansible/remote-key
+qa3 ansible_host=server9 ansible_user=remote_user ansible_private_key_file=/var/jenkins_home/ansible/remote-key
+qa4 ansible_host=server10 ansible_user=remote_user ansible_private_key_file=/var/jenkins_home/ansible/remote-key

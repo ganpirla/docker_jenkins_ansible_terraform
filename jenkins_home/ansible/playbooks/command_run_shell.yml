@@ -1,0 +1,12 @@
+---
+-
+  hosts: all
+  tasks:
+    - name: Running a Linux command in shell
+      shell: |
+        "df" 
+      register: dfcommand
+
+    - name: Displaying the df command output
+      debug:       
+        msg: "{{ dfcommand.stdout }}"

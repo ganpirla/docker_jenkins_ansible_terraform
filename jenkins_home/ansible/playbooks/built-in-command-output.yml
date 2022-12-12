@@ -1,0 +1,9 @@
+---
+-
+  hosts: all
+  tasks:
+
+    - name: Return df -hT command output to registered var
+      ansible.builtin.command: df -hT
+      register: mymotd  
+    - debug: var=mymotd.stdout_lines
