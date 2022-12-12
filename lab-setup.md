@@ -4,22 +4,38 @@ Docker and docker compose should be installed in your VM.
 
 ## Procedure ##
 
-a) - This repo will help you to have a docker with jenkins, ansible and tearrform 
+a) - This repo will help you to have a docker with jenkins, ansible and tearrform.
+
 b) - If you want to parctice your self you just need to do below steps by cloging this repo.
+
 c) - cd /Users/gangad
+
 d) - git clone https://github.com/ganpirla/docker_jenkins_ansible_terraform.git
+
 e) - cd /Users/gangad/docker_jenkins_ansible_terraform/centos7
+
 f) - ssh-keygen -f remote-key (do not enter any input keep press ENTER key) 
+
 g) - ls -lart  ( once done  you should see 2 files with ssh keys -  remote-key, remote-key.pub )
+
 h) - Copy those 2 ssh files into server1 through server10 respective folders
+
 i) - docker-compose build
+
 j) - docker-compose up -d
+
 k) - docker logs -f jenkins ( Copy the jenkins initial secret to setup and to complete the jenkins)
+
 l) - install needed jenkins plugins along with ansible and terraform plugins.
+
 m) - now your jenkins docker is up with ansible and terraform in it and also server1 to server10 vms for testing.
+
 n) - cd  /Users/gangad/docker_jenkins_ansible_terraform/jenkins_home/ansible
+
 o) - copy the private ssh key remote-key which was generated for the user remote_user in the above location
+
 p) - thats it now ansible is ready. 
+
 q) - If you want to parctise more with anislbe playbook you can clone the another my repo https://github.com/ganpirla/ansible.git which ansible playbooks under /Users/gangad/docker_jenkins_ansible_terraform/jenkins_home/ansible
 
 ## connection test ##
@@ -27,8 +43,11 @@ q) - If you want to parctise more with anislbe playbook you can clone the anothe
 Below you can see jenkins VM is able to access server1 through server10 with private key and able to run all the ansible commands and playbooks. Also the same commands can be executed form jenkins url with projects by using the execute shell block 
 
 gangad@Pirlas-MacBook-Air jenkins_home % docker container exec -it jenkins bash
+
 jenkins@ac06a64bdf03:/$ cd /var/jenkins_home/ansible/
+
 jenkins@ac06a64bdf03:~/ansible$ 
+
 jenkins@ac06a64bdf03:~/ansible$ cat hosts 
 [all:vars]
 
